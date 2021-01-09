@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import './styles/utilities.css';
 import Navbar from "./layout/Navbar";
 import Landing from "./layout/Landing";
 
