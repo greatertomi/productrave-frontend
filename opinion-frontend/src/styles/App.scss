@@ -5,6 +5,7 @@ body {
   background: #131313;
   color: white;
   font-size: 16px;
+  padding-bottom: 100px;
 }
 
 h1 {
@@ -13,7 +14,7 @@ h1 {
   font-size: 35px;
 }
 
-h3 {
+h2, h3 {
   color: white;
 }
 
@@ -44,4 +45,19 @@ h3 {
 .mainText {
   font-size: 20px;
   margin-top: 10px;
+}
+
+.downloadIcons {
+  display: flex;
+  justify-content: space-around;
+  img {
+    cursor: pointer;
+  }
+}
+
+.joinOpinionDiv {
+  margin-top: 70px;
+  div {
+    font-size: 14px;
+  }
 }
