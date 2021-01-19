@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #131313;
+  color: white;
+  font-size: 16px;
+}
+
+h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 35px;
+}
+
+h3 {
+  color: white;
+}
+
+.navbar {
+  background: #1B1B1B;
+  color: white;
+  border-style: none;
+
+  .menuItem {
+    float: right;
+  }
+}
+
+.landingBanner {
+  margin: 60px 14% 30px;
+}
+
+.landingImg {
+  float: right;
+}
+
+.header {
+  background: #1B1B1B;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainText {
+  font-size: 20px;
+  margin-top: 10px;
+}
