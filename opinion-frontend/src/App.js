@@ -1,16 +1,14 @@
-import React from "react";
+import React from 'react';
 import './styles/App.scss';
 import './styles/utilities.scss';
-import Navbar from "./layout/Navbar";
-import Landing from "./layout/Landing";
+import Login from './components/auth/Login';
+// import Landing from './components/layout/Landing';
 
-const App = () => {
-  return (
-    <div className="App">
-      <Navbar />
-      <Landing />
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    {/* <Landing /> */}
+    <Login />
+  </div>
+);
 
 export default App;

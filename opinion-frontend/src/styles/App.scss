@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+$background-color: #131313;
+$card-color: #1B1B1B;
+$white: #fff;
+$gray: #9b9b9b;
+$primary: #1890FF;
 
 body {
   font-family: 'Lato', sans-serif;
-  background: #131313;
+  background: $background-color;
   color: white;
   font-size: 16px;
   padding-bottom: 100px;
@@ -19,7 +24,7 @@ h2, h3 {
 }
 
 .navbar {
-  background: #1B1B1B;
+  background: $card-color;
   color: white;
   border-style: none;
 
@@ -37,7 +42,7 @@ h2, h3 {
 }
 
 .header {
-  background: #1B1B1B;
+  background: $card-color;
   display: flex;
   justify-content: space-between;
 }
@@ -56,8 +61,71 @@ h2, h3 {
 }
 
 .joinOpinionDiv {
-  margin-top: 70px;
+  margin-top: 140px;
   div {
     font-size: 14px;
   }
 }
+
+.writeToUsDiv {
+  margin-top: 140px;
+}
+
+.footer {
+  background: $card-color;
+  margin-top: 140px;
+  padding: 50px 0 80px 0 !important;
+  display: flex;
+  justify-content: space-around;
+}
+
+.appLogin {
+  .loginForm {
+    margin: 100px 30px 40px;
+  }
+}
+
+.loginForm {
+  background: $card-color;
+  padding: 20px 30px 40px;
+  .rememberMeDiv {
+    display: flex;
+    justify-content: space-between;
+    color: #d2d1d1;
+    input[type="checkbox"] {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  hr {
+    border: 0;
+    margin: 0;
+    width: 100%;
+    height: 2px;
+    background: #575757;
+  }
+
+  .lineDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $gray;
+  }
+}
+
+.styledInput {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  &:focus {
+    border-color: $primary;
+    transition: border-color 0.4s;
+  }
+}
+
