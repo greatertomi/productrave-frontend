@@ -123,6 +123,7 @@ h2, h3 {
   color: $white;
   padding: 7px 0;
   background: transparent;
+  
   &:focus {
     border-color: $primary;
     transition: border-color 0.4s;
