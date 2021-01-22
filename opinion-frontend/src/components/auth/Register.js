@@ -13,35 +13,64 @@ const Register = () => (
       <Col xs={24} sm={18} lg={10}>
         <div className="loginForm">
           <form>
-            <h2>Sign In</h2>
+            <h2>Sign Up</h2>
             <div>
+              <label htmlFor="fullname">
+                <input
+                  type="text"
+                  className="styledInput"
+                  placeholder="Fullname"
+                  name="fullname"
+                  id="fullname"
+                  required
+                />
+              </label>
+            </div>
+            <div className="mt-3">
               <label htmlFor="email">
-                <input type="email" className="styledInput" placeholder="Email" name="email" id="email" required />
+                <input
+                  type="email"
+                  className="styledInput"
+                  placeholder="Email"
+                  name="email"
+                  id="email"
+                  required
+                />
               </label>
             </div>
             <div className="mt-3">
               <label htmlFor="password">
-                <input type="password" className="styledInput" placeholder="Password" name="password" id="password" required />
+                <input
+                  type="password"
+                  className="styledInput"
+                  placeholder="Password"
+                  name="password"
+                  id="password"
+                  required
+                />
               </label>
             </div>
-            <div className="rememberMeDiv mt-3">
-              <div>
-                <input type="checkbox" name="rememberMe" />
-                <span> Remember me</span>
-              </div>
-              <div>
-                Forgot Password
-              </div>
+            <div className="mt-3">
+              <label htmlFor="password2">
+                <input
+                  type="password"
+                  className="styledInput"
+                  placeholder="Confirm Password"
+                  name="password2"
+                  id="password2"
+                  required
+                />
+              </label>
             </div>
             <div className="mt-3">
-              <Button type="primary" size="large" block>Login</Button>
+              <Button type="primary" size="large" block>Register</Button>
             </div>
             <Row className="mt-3 lineDiv">
               <Col span={8}>
                 <hr />
               </Col>
               <Col span={8} className="text-center">
-                Or Sign In With
+                Or Sign Up With
               </Col>
               <Col span={8}>
                 <hr />
@@ -61,8 +90,8 @@ const Register = () => (
           </form>
         </div>
         <div className="text-center">
-          Don't have an account?
-          <span> Sign Up</span>
+          You already have an account?
+          <span> Sign In</span>
         </div>
       </Col>
     </Row>
