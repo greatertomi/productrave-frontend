@@ -45,6 +45,7 @@ h2, h3 {
   background: $card-color;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .mainText {
@@ -150,6 +151,65 @@ h2, h3 {
   &:focus {
     border-color: $primary;
     transition: border-color 0.4s;
+  }
+}
+
+.userIcons {
+  display: flex;
+  color: white;
+  align-items: center;
+  .icon:hover {
+    color: #cbc9c9 !important;
+  }
+  div * {
+    margin-right: 25px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
+
+.dropdown * {
+  color: white !important;
+  background-color: $card-color;
+  &:hover {
+    background-color: #575757 !important;
+  }
+}
+
+.searchInput {
+  width: 50%;
+}
+
+.topBarCard {
+  background: $card-color;
+  padding: 20px 30px;
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      cursor: pointer;
+      line-height: 30px;
+      &:hover {
+        text-decoration: underline;
+        color: #cbc9c9;
+      }
+    }
+  }
+  .rightDiv {
+    margin: 40px;
+  }
+}
+
+// Dashboard
+.mainPageDiv {
+  margin: 30px 10%;
+}
+
+.carousel {
+  height: 90%;
+  img {
+    width: 100%;
+    height: 400px;
   }
 }
 
