@@ -20,6 +20,7 @@
     "rules": {
         "linebreak-style": "off",
         "comma-dangle": "off",
+        "no-console": "off",
         "react/no-unescaped-entities": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }

@@ -6,6 +6,8 @@ import advert2 from '../../images/advert2.png';
 import advert3 from '../../images/advert3.png';
 import advert4 from '../../images/advert4.png';
 import advert5 from '../../images/advert5.jpg';
+import CategoryBar from './CategoryBar';
+import Footer from '../layout/Footer';
 
 const DashboardLanding = () => (
   <div>
@@ -13,7 +15,7 @@ const DashboardLanding = () => (
     <div className="mainPageDiv">
       <div className="topBarCard">
         <Row>
-          <Col span={5}>
+          <Col span={7} className="hideSm">
             <ul>
               <li>Health & Beauty</li>
               <li>Fashion</li>
@@ -26,7 +28,7 @@ const DashboardLanding = () => (
               <li>Others</li>
             </ul>
           </Col>
-          <Col span={14}>
+          <Col sm={24} md={16}>
             <Carousel autoplay className="carousel">
               <div>
                 {/* <h3 style={contentStyle}>1</h3> */}
@@ -46,13 +48,14 @@ const DashboardLanding = () => (
               </div>
             </Carousel>
           </Col>
-          <Col span={5}>
-            <div className="rightDiv">Still thinking...</div>
-          </Col>
         </Row>
       </div>
+      <CategoryBar title="New Arrival" cardNum={5} />
+      <CategoryBar title="Trending" cardNum={5} />
+      <CategoryBar title="Popular Categories" cardNum={5} />
+      <CategoryBar title="Suggestions" cardNum={5} />
     </div>
-    <div>Coolest ever</div>
+    <Footer />
   </div>
 );
 

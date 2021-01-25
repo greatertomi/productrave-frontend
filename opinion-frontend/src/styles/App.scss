@@ -154,6 +154,8 @@ h2, h3 {
   }
 }
 
+// Dashboard styles
+
 .userIcons {
   display: flex;
   color: white;
@@ -200,6 +202,12 @@ h2, h3 {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .hideSm {
+    display: none;
+  }
+}
+
 // Dashboard
 .mainPageDiv {
   margin: 30px 10%;
@@ -213,3 +221,22 @@ h2, h3 {
   }
 }
 
+.itemCard {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  img {
+    height: 200px;
+    width: 180px;
+  }
+}
+
+.categoryCard {
+  background: $card-color;
+  padding: 20px 30px;
+  margin-top: 50px;
+  flex: 0 0 auto;
+  div {
+    display: flex;
+  }
+}
