@@ -46,8 +46,8 @@ const DashboardLanding = () => (
               </div>
             </Carousel>
           </Col>
-          <Col span={5} className="pl-1">
-            People 3
+          <Col span={5}>
+            <div className="rightDiv">Still thinking...</div>
           </Col>
         </Row>
       </div>
