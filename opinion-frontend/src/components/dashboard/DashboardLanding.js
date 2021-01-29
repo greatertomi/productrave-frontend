@@ -9,6 +9,29 @@ import advert5 from '../../images/advert5.jpg';
 import CategoryBar from './CategoryBar';
 import Footer from '../layout/Footer';
 
+const layouts = [
+  {
+    id: 1,
+    title: 'New Arrival',
+    itemNumber: 5
+  },
+  {
+    id: 2,
+    title: 'Trending',
+    itemNumber: 10
+  },
+  {
+    id: 3,
+    title: 'Popular Categories',
+    itemNumber: 6
+  },
+  {
+    id: 4,
+    title: 'Suggestions',
+    itemNumber: 20
+  }
+];
+
 const DashboardLanding = () => (
   <div>
     <Navbar />
@@ -31,7 +54,6 @@ const DashboardLanding = () => (
           <Col sm={24} md={16}>
             <Carousel autoplay className="carousel">
               <div>
-                {/* <h3 style={contentStyle}>1</h3> */}
                 <img src={advert1} alt="Advert 1" />
               </div>
               <div>
@@ -50,10 +72,9 @@ const DashboardLanding = () => (
           </Col>
         </Row>
       </div>
-      <CategoryBar title="New Arrival" cardNum={5} />
-      <CategoryBar title="Trending" cardNum={5} />
-      <CategoryBar title="Popular Categories" cardNum={5} />
-      <CategoryBar title="Suggestions" cardNum={5} />
+      {layouts.map((data) => (
+        <CategoryBar key={data.id} title={data.title} cardNum={data.itemNumber} />
+      ))}
     </div>
     <Footer />
   </div>
