@@ -4,6 +4,7 @@ import {
 } from 'antd';
 import { MdPersonOutline } from 'react-icons/md';
 import { BiMessageDetail } from 'react-icons/bi';
+import { IoBagAddOutline } from 'react-icons/io5';
 // Menu,
 // import { AppstoreOutlined, LoginOutlined, UserAddOutlined } from '@ant-design/icons';
 const { Search } = Input;
@@ -50,10 +51,13 @@ const Navbar = () => {
         />
         <div className="userIcons">
           <div>
+            <IoBagAddOutline size={40} color="white" className="icon" />
+          </div>
+          <div>
             <BiMessageDetail size={40} color="white" className="icon" />
           </div>
           <div>
-            <Dropdown overlay={menu} placement="bottomCenter" arrow overlayClassName="dropdown">
+            <Dropdown overlay={menu} placement="bottomCenter" overlayClassName="dropdown">
               <MdPersonOutline size={40} color="white" className="icon" />
             </Dropdown>
           </div>

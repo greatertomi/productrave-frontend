@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-$background-color: #131313;
-$card-color: #1B1B1B;
-$white: #fff;
-$gray: #9b9b9b;
-$primary: #1890FF;
+@import "variables";
 
 body {
   font-family: 'Lato', sans-serif;
@@ -98,6 +94,10 @@ h2, h3 {
   }
 }
 
+.dropdown {
+  background: $card-color !important;
+}
+
 .loginForm {
   background: $card-color;
   padding: 20px 30px 40px;
@@ -170,14 +170,6 @@ h2, h3 {
   }
 }
 
-.dropdown * {
-  color: white !important;
-  background-color: $card-color;
-  &:hover {
-    background-color: #575757 !important;
-  }
-}
-
 .searchInput {
   width: 50%;
 }
@@ -226,6 +218,7 @@ h2, h3 {
   flex-direction: column;
   margin-right: 20px;
   margin-top: 25px;
+  cursor: pointer;
   img {
     height: 200px;
     width: 180px;
@@ -241,3 +234,4 @@ h2, h3 {
     flex-wrap: wrap;
   }
 }
+
