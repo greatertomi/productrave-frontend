@@ -37,10 +37,22 @@
       }
     }
   }
+  hr {
+    background: $gray;
+  }
+  .reactionCount {
+    display: flex;
+    div {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+  }
 }
 
-.ellipses {
+.ellipses, .reaction {
   cursor: pointer;
+  margin-left: 10px;
   &:hover {
     color: $primary;
   }
@@ -48,4 +60,13 @@
 
 .deleteMenu {
   color: #ba1302 ;
+}
+
+.reactionIcon {
+  margin: 5px 10px;
+  cursor: pointer;
+  &:hover {
+    height: 22px;
+    width: 22px;
+  }
 }

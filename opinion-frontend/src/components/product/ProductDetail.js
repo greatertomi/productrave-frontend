@@ -47,7 +47,7 @@ const ProductDetail = () => {
               </div>
               <div>
                 <div>Cost/Value</div>
-                <Rate onChange={handleChange} allowHalf defaultValue={3.8} />
+                <Rate onChange={handleChange} allowHalf defaultValue={2} />
               </div>
               <div>
                 <div>Usability</div>

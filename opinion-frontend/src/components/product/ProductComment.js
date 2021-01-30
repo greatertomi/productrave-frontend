@@ -1,6 +1,10 @@
 import React from 'react';
 import { Dropdown, Menu, Rate } from 'antd';
 import { FaEllipsisH } from 'react-icons/fa';
+import { BiSmile } from 'react-icons/bi';
+import {
+  FcDislike, FcLike, FcIdea, FcLinux, FcNoIdea, FcSearch
+} from 'react-icons/fc';
 
 import shoe from '../../images/shoe.jpg';
 
@@ -24,6 +28,21 @@ const menu = (
   </Menu>
 );
 
+const reactions = (
+  <Menu>
+    <div>
+      <FcDislike size={20} className="reactionIcon" />
+      <FcLike size={20} className="reactionIcon" />
+      <FcLinux size={20} className="reactionIcon" />
+    </div>
+    <div>
+      <FcIdea size={20} className="reactionIcon" />
+      <FcNoIdea size={20} className="reactionIcon" />
+      <FcSearch size={20} className="reactionIcon" />
+    </div>
+  </Menu>
+);
+
 const ProductComment = () => {
   const handleAction = () => {
     // code here
@@ -44,6 +63,9 @@ const ProductComment = () => {
           </div>
         </div>
         <div>
+          <Dropdown overlay={reactions} placement="bottomRight" arrow trigger={['click']}>
+            <BiSmile size={25} className="reaction" />
+          </Dropdown>
           <Dropdown overlay={menu} placement="bottomRight" arrow trigger={['click']}>
             <FaEllipsisH size={20} className="ellipses" />
           </Dropdown>
@@ -61,6 +83,16 @@ const ProductComment = () => {
           facere libero magnam nisi optio quasi recusandae tempora vel. Animi cupiditate
           dolorem doloremque eaque eveniet, natus nisi officiis ratione.
         </p>
+      </div>
+      <div className="mt-3 reactionCount">
+        <div>
+          <FcLinux size={30} />
+          <div>4</div>
+        </div>
+        <div>
+          <FcIdea size={30} />
+          <div>4</div>
+        </div>
       </div>
     </div>
   );
