@@ -1,0 +1,6 @@
+Packages to use
+
+1. To loop text -> react-text-loop
+2. For responsiveness: react-responsive or react-media
+3. Page progress bar: nprogress
+4. animation: Ant motion or React move
