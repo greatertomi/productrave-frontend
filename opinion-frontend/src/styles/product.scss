@@ -70,42 +70,22 @@
   }
 }
 
-.app .ql-container {
-  border-bottom-left-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
-  background: #fefcfc;
-}
-
-/* Snow Theme */
-.app .ql-snow.ql-toolbar {
-  display: block;
-  background: #eaecec;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
-}
-
-/* Bubble Theme */
-.app .ql-bubble .ql-editor {
-  border: 1px solid #ccc;
-  border-radius: 0.5em;
-}
-
-.app .ql-editor {
-  min-height: 18em;
-}
-
-.themeSwitcher {
-  margin-top: 0.5em;
-  font-size: small;
-}
-/*.reactQuill {
+.quill {
   background: $card-color;
   border-color: $card-color;
   color: white !important;
-  height: 40vh;
+  height: 40vh !important;
+  &::placeholder {
+    color: white !important;
+  }
   .ql-snow.ql-toolbar {
     display: block;
     color: white !important;
     background: $card-color;
   }
-}*/
+}
+
+.hyperlinks {
+  display: flex;
+  justify-content: space-between;
+}

@@ -18,10 +18,10 @@ const ProductDetail = () => {
       <div className="mainPageDiv">
         <div className="card py-2">
           <Row>
-            <Col span={8}>
+            <Col span={8} gutter={10}>
               <img src={shoe} alt="product" height="300px" width="300px" />
             </Col>
-            <Col span={10}>
+            <Col span={10} gutter={10}>
               <h1>Premier Shoe Nike 450s</h1>
               <h3>Categories: Fashion, Sporting Wears</h3>
               <h2>$120</h2>
@@ -36,7 +36,7 @@ const ProductDetail = () => {
                 <Rate onChange={handleChange} value={3.5} />
               </div>
             </Col>
-            <Col span={6}>
+            <Col span={6} gutter={10}>
               <h2 className="mb-2">Ratings</h2>
               <div>
                 <div>Durability</div>
@@ -54,8 +54,9 @@ const ProductDetail = () => {
                 <div>Usability</div>
                 <Rate onChange={handleChange} allowHalf defaultValue={5} />
               </div>
-              <div className="mt-3 text-right">
-                <span className="ant-btn-link">Suggest rating</span>
+              <div className="mt-3 text-right hyperlinks">
+                <div className="ant-btn-link">Follow</div>
+                <div className="ant-btn-link">Suggest rating</div>
               </div>
             </Col>
           </Row>
