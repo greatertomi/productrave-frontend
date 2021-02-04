@@ -5,7 +5,8 @@ import shoe from '../../images/shoe.jpg';
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 import ProductComment from './ProductComment';
-import Editor from './Editor';
+import CreateProduct from './CreateProduct';
+// import Editor from './Editor';
 
 const ProductDetail = () => {
   const handleChange = () => {
@@ -65,7 +66,8 @@ const ProductDetail = () => {
         <ProductComment />
 
         <div className="mt-4">
-          <Editor />
+          <CreateProduct />
+          {/* <Editor /> */}
         </div>
       </div>
       <Footer />
