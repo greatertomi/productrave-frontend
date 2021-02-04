@@ -25,6 +25,7 @@
         "arrow-body-style": "off",
         "prefer-arrow-callback": "off",
         "consistent-return": "off",
+        "object-curly-newline": "off",
         "react/jsx-props-no-spreading": "off",
         "react/no-unescaped-entities": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]

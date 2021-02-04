@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Select } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
 const formItemLayout = {
@@ -20,34 +20,43 @@ const formItemLayoutWithOutLabel = {
 };
 
 const DynamicFieldSet = () => {
-  const onFinish = (values) => {
-    console.log('Received values of form:', values);
+  const handleSubmitForm = () => {
+    // handle
   };
+
+  const handleFailedSubmit = () => {
+    // pass
+  };
+
+  handleSubmitForm();
 
   return (
     <Form
-      name="dynamic_form_item"
-      {...formItemLayoutWithOutLabel}
-      onFinish={onFinish}
+      name="basic"
+      initialValues={{ remember: true }}
+      onFinish={handleSubmitForm}
+      onFinishFailed={handleFailedSubmit}
     >
-      <Form.List
-        name="names"
-        rules={[
-          {
-            validator: async (_, names) => {
-              if (!names || names.length < 2) {
-                return Promise.reject(new Error('At least 2 passengers'));
-              }
-            },
-          },
-        ]}
+      <Form.Item
+        label="Username"
+        name="username"
+        rules={[{ required: true, message: 'Please input your username!' }]}
       >
+        <Input />
+      </Form.Item>
+      <Form.Item label="Select">
+        <Select>
+          <Select.Option value="cat1">Category 1</Select.Option>
+          <Select.Option value="cat2">Category 2</Select.Option>
+        </Select>
+      </Form.Item>
+      <Form.List name="categories">
         {(fields, { add, remove }, { errors }) => (
           <>
             {fields.map((field, index) => (
               <Form.Item
                 {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
-                label={index === 0 ? 'Passengers' : ''}
+                label={index === 0 ? 'Categories' : ''}
                 required={false}
                 key={field.key}
               >
@@ -59,15 +68,12 @@ const DynamicFieldSet = () => {
                       required: true,
                       whitespace: true,
                       message:
-                        "Please input passenger's name or delete this field.",
+                        'Please enter category name or delete this field.',
                     },
                   ]}
                   noStyle
                 >
-                  <Input
-                    placeholder="passenger name"
-                    style={{ width: '60%' }}
-                  />
+                  <Input placeholder="Category name" style={{ width: '60%' }} />
                 </Form.Item>
                 {fields.length > 1 ? (
                   <MinusCircleOutlined
@@ -84,28 +90,13 @@ const DynamicFieldSet = () => {
                 style={{ width: '60%' }}
                 icon={<PlusOutlined />}
               >
-                Add field
-              </Button>
-              <Button
-                type="dashed"
-                onClick={() => {
-                  add('The head item', 0);
-                }}
-                style={{ width: '60%', marginTop: '20px' }}
-                icon={<PlusOutlined />}
-              >
-                Add field at head
+                Add Field
               </Button>
               <Form.ErrorList errors={errors} />
             </Form.Item>
           </>
         )}
       </Form.List>
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
     </Form>
   );
 };

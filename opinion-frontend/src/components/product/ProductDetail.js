@@ -1,14 +1,27 @@
-import React from 'react';
-import { Row, Col, Rate } from 'antd';
+import React, { useState } from 'react';
+import { Row, Col, Rate, Button, Modal } from 'antd';
 
 import shoe from '../../images/shoe.jpg';
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 import ProductComment from './ProductComment';
-import CreateProduct from './CreateProduct';
 // import Editor from './Editor';
 
 const ProductDetail = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleShowModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleHideModal = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
   const handleChange = () => {
     console.log('Update rating');
   };
@@ -28,9 +41,9 @@ const ProductDetail = () => {
               <h2>$120</h2>
               <div>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aliquid atque commodi consequuntur debitis deserunt dolor dolore esse
-                explicabo fugit iusto odio quaerat quas quia, quibusdam reiciendis
-                sapiente suscipit velit voluptas.
+                Aliquid atque commodi consequuntur debitis deserunt dolor dolore
+                esse explicabo fugit iusto odio quaerat quas quia, quibusdam
+                reiciendis sapiente suscipit velit voluptas.
               </div>
               <div className="mt-2">
                 <div>Overall Rating</div>
@@ -66,10 +79,21 @@ const ProductDetail = () => {
         <ProductComment />
 
         <div className="mt-4">
-          <CreateProduct />
-          {/* <Editor /> */}
+          <Button type="primary" onClick={handleShowModal}>
+            Show Modal
+          </Button>
         </div>
       </div>
+
+      <Modal
+        title="Share your thought"
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleHideModal}
+      >
+        Bicycle riding on the modal Bicycle riding on the modal Bicycle riding
+        on the modal
+      </Modal>
       <Footer />
     </div>
   );
