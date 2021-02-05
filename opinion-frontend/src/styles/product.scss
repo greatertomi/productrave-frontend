@@ -75,7 +75,8 @@
   background: $card-color;
   border-color: $card-color;
   color: white !important;
-  height: 40vh !important;
+  height: 20vh !important;
+  margin-bottom: 10px;
   &::placeholder {
     color: white !important;
   }

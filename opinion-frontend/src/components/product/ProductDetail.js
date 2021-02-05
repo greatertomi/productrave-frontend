@@ -5,6 +5,7 @@ import shoe from '../../images/shoe.jpg';
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 import ProductComment from './ProductComment';
+import CreateComment from './CreateComment';
 // import Editor from './Editor';
 
 const ProductDetail = () => {
@@ -68,9 +69,8 @@ const ProductDetail = () => {
                 <div>Usability</div>
                 <Rate onChange={handleChange} allowHalf defaultValue={5} />
               </div>
-              <div className="mt-3 text-right hyperlinks">
+              <div className="mt-3 text-right">
                 <div className="ant-btn-link">Follow</div>
-                <div className="ant-btn-link">Suggest rating</div>
               </div>
             </Col>
           </Row>
@@ -91,8 +91,7 @@ const ProductDetail = () => {
         onOk={handleOk}
         onCancel={handleHideModal}
       >
-        Bicycle riding on the modal Bicycle riding on the modal Bicycle riding
-        on the modal
+        <CreateComment />
       </Modal>
       <Footer />
     </div>
