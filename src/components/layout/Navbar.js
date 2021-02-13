@@ -1,25 +1,36 @@
 import React from 'react';
-import {
-  Menu, Layout, Input, Dropdown
-} from 'antd';
+import { Menu, Layout, Input, Dropdown } from 'antd';
 import { MdPersonOutline } from 'react-icons/md';
 import { BiMessageDetail } from 'react-icons/bi';
 import { IoBagAddOutline } from 'react-icons/io5';
-// Menu,
-// import { AppstoreOutlined, LoginOutlined, UserAddOutlined } from '@ant-design/icons';
-const { Search } = Input;
+import {
+  AppstoreOutlined,
+  LoginOutlined,
+  UserAddOutlined,
+} from '@ant-design/icons';
 
+const { Search } = Input;
 const { Header } = Layout;
+
+const status = 'prelogin';
 
 const menu = (
   <Menu>
     <Menu.Item className="menuItem">
-      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.alipay.com/"
+      >
         1st menu item
       </a>
     </Menu.Item>
     <Menu.Item className="menuItem">
-      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.taobao.com/"
+      >
         2nd menu item
       </a>
     </Menu.Item>
@@ -32,36 +43,54 @@ const menu = (
 );
 
 const Navbar = () => {
-  const onSearch = () => {
-  };
+  const onSearch = () => {};
 
   return (
     <div>
       <Header className="header">
         <h3>Product Rave</h3>
-        {/* <Menu mode="horizontal" defaultSelectedKeys={['1']} className="navbar">
-          <Menu.Item key="2" icon={<UserAddOutlined />} className="menuItem">Register</Menu.Item>
-          <Menu.Item key="3" icon={<LoginOutlined />} className="menuItem">Login</Menu.Item>
-          <Menu.Item key="1" icon={<AppstoreOutlined />} className="menuItem">Home</Menu.Item>
-        </Menu> */}
-        <Search
-          placeholder="input search text"
-          onSearch={onSearch}
-          className="searchInput"
-        />
-        <div className="userIcons">
+        {status === 'prelogin' ? (
+          <Menu
+            mode="horizontal"
+            defaultSelectedKeys={['1']}
+            className="navbar"
+          >
+            <Menu.Item key="2" icon={<UserAddOutlined />} className="menuItem">
+              Register
+            </Menu.Item>
+            <Menu.Item key="3" icon={<LoginOutlined />} className="menuItem">
+              Login
+            </Menu.Item>
+            <Menu.Item key="1" icon={<AppstoreOutlined />} className="menuItem">
+              Home
+            </Menu.Item>
+          </Menu>
+        ) : (
           <div>
-            <IoBagAddOutline size={40} color="white" className="icon" />
+            <Search
+              placeholder="input search text"
+              onSearch={onSearch}
+              className="searchInput"
+            />
+            <div className="userIcons">
+              <div>
+                <IoBagAddOutline size={40} color="white" className="icon" />
+              </div>
+              <div>
+                <BiMessageDetail size={40} color="white" className="icon" />
+              </div>
+              <div>
+                <Dropdown
+                  overlay={menu}
+                  placement="bottomCenter"
+                  overlayClassName="dropdown"
+                >
+                  <MdPersonOutline size={40} color="white" className="icon" />
+                </Dropdown>
+              </div>
+            </div>
           </div>
-          <div>
-            <BiMessageDetail size={40} color="white" className="icon" />
-          </div>
-          <div>
-            <Dropdown overlay={menu} placement="bottomCenter" overlayClassName="dropdown">
-              <MdPersonOutline size={40} color="white" className="icon" />
-            </Dropdown>
-          </div>
-        </div>
+        )}
       </Header>
     </div>
   );

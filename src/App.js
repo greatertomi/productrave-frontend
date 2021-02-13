@@ -1,23 +1,20 @@
 import React from 'react';
-import './styles/App.scss';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import './styles/app.scss';
 import './styles/utilities.scss';
-import './styles/product.scss';
-// import CreateProduct from './components/product/CreateProduct';
-// import DashboardLanding from './components/dashboard/DashboardLanding';
-import ProductDetail from './components/product/ProductDetail';
-// import Register from './components/auth/Register';
-// import Login from './components/auth/Login';
-// import Landing from './components/layout/Landing';
+import Landing from './components/layout/Landing';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 
 const App = () => (
-  <div className="App">
-    {/* <Landing /> */}
-    {/* <Login /> */}
-    {/* <Register /> */}
-    {/* <DashboardLanding /> */}
-    <ProductDetail />
-    {/* <CreateProduct /> */}
-  </div>
+  <BrowserRouter>
+    <div>
+      <Route path="/" exact component={Landing} />
+      <Route path="/login" exact component={Login} />
+      <Route path="/register" exact component={Register} />
+    </div>
+  </BrowserRouter>
 );
 
 export default App;

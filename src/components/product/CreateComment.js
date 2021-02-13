@@ -13,13 +13,17 @@ const CreateComment = () => {
         <div>Purchase Price</div>
         <Input />
       </div>
-      <Row justify="space-around mt-1">
+      <Row justify="space-between mt-3">
         <Col>
           <div>Durability</div>
           <Rate />
         </Col>
         <Col>
           <div>Usability</div>
+          <Rate />
+        </Col>
+        <Col>
+          <div>Flexibility</div>
           <Rate />
         </Col>
       </Row>

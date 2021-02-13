@@ -1,0 +1,47 @@
+@import 'variables';
+
+.profileSideNav {
+  height: 90vh;
+  padding: 40px 30px;
+  border-top: 2px solid #2a282a;
+
+  .profilePix {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  Button {
+    padding: 5px;
+    margin-left: 30px;
+  }
+
+  hr {
+    border: 0;
+    width: 100%;
+    height: 2px;
+    background: #2a282a;
+  }
+
+  .catFollowing {
+    line-height: 30px;
+  }
+}
+
+.profilePage {
+  display: flex;
+
+  .items {
+    display: flex;
+  }
+
+  & > div:nth-child(1) {
+    background: $card-color;
+    width: 20%;
+  }
+
+  & > div:nth-child(2) {
+    width: 80%;
+    padding: 20px;
+  }
+}
