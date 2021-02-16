@@ -2,39 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { NavLink } from 'react-router-dom';
+
+import { BiLogIn, BiDockTop } from 'react-icons/bi';
+
+import './nav.scss';
+
 const Ul = styled.ul`
-  .navItems {
-    list-style: none;
-    display: flex;
-    flex-flow: row nowrap;
-    z-index: 10;
-
-    li {
-      padding: 18px 20px;
-      font-size: 17px;
-      cursor: pointer;
-      &:hover {
-        color: #cbc9c9;
-      }
-    }
-  }
-
   @media (max-width: 768px) {
     .navItems {
-      flex-flow: column nowrap;
-      background-color: #1b1b1b;
-      position: fixed;
       transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 300px;
-      padding-top: 3.5rem;
-      transition: transform 0.3s ease-in-out;
-
-      li {
-        color: #fff;
-      }
     }
   }
 `;
@@ -51,8 +28,14 @@ const RightNav = ({ open }) => {
         </div>
       ) : (
         <div className="navItems">
-          <li>Login</li>
-          <li>Register</li>
+          <NavLink to="/login" className="li navLink">
+            <BiLogIn size={30} color="#1169E5" />
+            <div>Login</div>
+          </NavLink>
+          <NavLink to="/register" className="li">
+            <BiDockTop size={30} color="#1169E5" />
+            <div>Register</div>
+          </NavLink>
         </div>
       )}
     </Ul>
@@ -60,7 +43,7 @@ const RightNav = ({ open }) => {
 };
 
 RightNav.propTypes = {
-  open: PropTypes.string.isRequired,
+  open: PropTypes.bool.isRequired,
 };
 
 export default RightNav;

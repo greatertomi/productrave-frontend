@@ -45,7 +45,11 @@ const Burger = () => {
 
   return (
     <>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
+      <StyledBurger
+        open={open}
+        onClick={() => setOpen(!open)}
+        className="burger"
+      >
         <div />
         <div />
         <div />

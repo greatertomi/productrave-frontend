@@ -1,45 +1,37 @@
 import React from 'react';
 import { Col, Row } from 'antd';
 import { BsPeople } from 'react-icons/bs';
+
 import { AiOutlineComment, AiOutlineSound } from 'react-icons/ai';
 import { FcFeedback, FcIcons8Cup, FcHighPriority } from 'react-icons/fc';
+
 import landingImage from '../../images/landing-image.png';
-import apple from '../../images/apple.jpg';
-import google from '../../images/google.jpg';
 
 const LandingBody = () => (
   <div className="landingBanner">
-    <Row className="landingTop" gutter={{ xs: 8, sm: 16, md: 24 }}>
+    <Row className="landingTop" gutter={{ xs: 0, sm: 8, md: 24 }}>
       <Col lg={12} sm={24} className="pr-3">
-        <img
-          src={landingImage}
-          alt=""
-          className="landingImg"
-          height={350}
-          width={500}
-        />
+        <img src={landingImage} alt="Landing" className="landingImg" />
       </Col>
       <Col lg={12} sm={24} className="pl-3">
         <h1>Meet your Interest Community</h1>
-        <div className="mainText mt-3">You are welcomed to Opinions.</div>
+        <div className="mainText mt-3">You are welcomed to ProductRave.</div>
         <div className="mainText">
-          Anyone can download the app and see reviews, but to contribute, you'll
-          need an invite code. Learn more
-        </div>
-        <div className="mt-3 downloadIcons">
-          <div>
-            <img src={google} height={60} width={200} alt="" />
+          <div className="mb-3">
+            We are here for two reasons. We believe amazing products are worth
+            shouting about. We make amazing products popular.
           </div>
           <div>
-            <img src={apple} height={60} width={200} alt="" />
+            We help you make better decision about the products you own and will
+            own by combining human and artificial intelligence.
           </div>
         </div>
       </Col>
     </Row>
     <div className="joinOpinionDiv">
-      <h1 className="mb-3">Join Opinions</h1>
+      <h1 className="mb-3">Join ProductRave</h1>
       <Row className="ant-row-center" gutter={30}>
-        <Col span={8}>
+        <Col lg={8} md={12} sm={24} className="landingCol">
           <AiOutlineSound color="#1172FF" fontSize={80} />
           <h2>Stay up-to-date</h2>
           <div>
@@ -47,7 +39,7 @@ const LandingBody = () => (
             about and get notified when something new gets released.
           </div>
         </Col>
-        <Col span={8}>
+        <Col lg={8} md={12} sm={24} className="landingCol">
           <AiOutlineComment color="#33AA7A" fontSize={80} />
           <h2>Review Products</h2>
           <div>
@@ -55,12 +47,12 @@ const LandingBody = () => (
             own. Real feedback from real owners is what we're all about.
           </div>
         </Col>
-        <Col span={8}>
+        <Col lg={8} md={12} sm={24} className="landingCol">
           <BsPeople color="#FFC400" fontSize={80} />
-          <h2>Join the Community</h2>
+          <h2>Make Better Decisions</h2>
           <div>
-            Discuss products, vote on your favorites, build your profile, and
-            see what others like. Opinions is where the discussion happens.
+            Discuss products, vote on your favorites, build your profile, see
+            what others like and get product suggestion from real people and AI.
           </div>
         </Col>
       </Row>
@@ -70,20 +62,20 @@ const LandingBody = () => (
         <h1>Get in touch</h1>
         <h3>We'd love to hear from you</h3>
       </div>
-      <Row>
-        <Col span={8}>
+      <div>
+        <div>
           <FcHighPriority fontSize={80} />
           <h2>Report a bug</h2>
-        </Col>
-        <Col span={8}>
+        </div>
+        <div>
           <FcFeedback fontSize={80} />
           <h2>Write to us</h2>
-        </Col>
-        <Col span={8}>
+        </div>
+        <div>
           <FcIcons8Cup fontSize={80} />
           <h2>Buy me a coffee</h2>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </div>
   </div>
 );

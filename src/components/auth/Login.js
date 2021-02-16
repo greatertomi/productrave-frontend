@@ -5,12 +5,8 @@ import { ImFacebook2 } from 'react-icons/im';
 import { FaTwitterSquare } from 'react-icons/fa';
 import { AiFillGoogleSquare } from 'react-icons/ai';
 
-import OldNavbar from '../layout/OldNavbar';
-import Footer from '../layout/Footer';
-
 const Login = () => (
   <div className="appLogin">
-    <OldNavbar />
     <Row className="ant-row-center">
       <Col xs={24} sm={18} lg={10}>
         <div className="loginForm">
@@ -82,7 +78,6 @@ const Login = () => (
         </div>
       </Col>
     </Row>
-    <Footer />
   </div>
 );
 
