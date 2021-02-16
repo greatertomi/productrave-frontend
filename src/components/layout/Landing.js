@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from './Navbar';
 import Footer from './Footer';
 import LandingBody from './LandingBody';
+import Navbar from './Nav/Navbar';
 
 const Landing = () => (
   <div>

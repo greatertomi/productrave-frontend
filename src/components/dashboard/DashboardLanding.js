@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel, Col, Row } from 'antd';
-import Navbar from '../layout/Navbar';
+import OldNavbar from '../layout/OldNavbar';
 import advert1 from '../../images/advert1.png';
 import advert2 from '../../images/advert2.png';
 import advert3 from '../../images/advert3.png';
@@ -13,28 +13,28 @@ const layouts = [
   {
     id: 1,
     title: 'New Arrival',
-    itemNumber: 5
+    itemNumber: 5,
   },
   {
     id: 2,
     title: 'Trending',
-    itemNumber: 10
+    itemNumber: 10,
   },
   {
     id: 3,
     title: 'Popular Categories',
-    itemNumber: 6
+    itemNumber: 6,
   },
   {
     id: 4,
     title: 'Suggestions',
-    itemNumber: 20
-  }
+    itemNumber: 20,
+  },
 ];
 
 const DashboardLanding = () => (
   <div>
-    <Navbar />
+    <OldNavbar />
     <div className="mainPageDiv">
       <div className="topBarCard">
         <Row>
@@ -73,7 +73,11 @@ const DashboardLanding = () => (
         </Row>
       </div>
       {layouts.map((data) => (
-        <CategoryBar key={data.id} title={data.title} cardNum={data.itemNumber} />
+        <CategoryBar
+          key={data.id}
+          title={data.title}
+          cardNum={data.itemNumber}
+        />
       ))}
     </div>
     <Footer />

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Row, Col, Rate, Button, Modal } from 'antd';
 
 import shoe from '../../images/shoe.jpg';
-import Navbar from '../layout/Navbar';
+import OldNavbar from '../layout/OldNavbar';
 import Footer from '../layout/Footer';
 import ProductComment from './ProductComment';
 import CreateComment from './CreateComment';
@@ -29,7 +29,7 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <Navbar />
+      <OldNavbar />
       <div className="mainPageDiv">
         <div className="card py-2">
           <Row>

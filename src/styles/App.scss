@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import "variables";
+@import 'variables';
 
 body {
   font-family: 'Lato', sans-serif;
@@ -15,18 +15,9 @@ h1 {
   font-size: 35px;
 }
 
-h2, h3 {
+h2,
+h3 {
   color: white;
-}
-
-.navbar {
-  background: $card-color;
-  color: white;
-  border-style: none;
-
-  .menuItem {
-    float: right;
-  }
 }
 
 .landingBanner {
@@ -85,7 +76,7 @@ h2, h3 {
     color: #bcbcbc;
     span {
       cursor: pointer;
-      color: #1890FF;
+      color: #1890ff;
       &:hover {
         text-decoration: underline;
         color: #0f7bdd;
@@ -105,7 +96,7 @@ h2, h3 {
     display: flex;
     justify-content: space-between;
     color: #d2d1d1;
-    input[type="checkbox"] {
+    input[type='checkbox'] {
       height: 15px;
       width: 15px;
     }
@@ -147,7 +138,7 @@ h2, h3 {
   color: $white;
   padding: 7px 0;
   background: transparent;
-  
+
   &:focus {
     border-color: $primary;
     transition: border-color 0.4s;
@@ -234,4 +225,3 @@ h2, h3 {
     flex-wrap: wrap;
   }
 }
-

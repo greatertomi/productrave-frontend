@@ -5,12 +5,12 @@ import { ImFacebook2 } from 'react-icons/im';
 import { FaTwitterSquare } from 'react-icons/fa';
 import { AiFillGoogleSquare } from 'react-icons/ai';
 
-import Navbar from '../layout/Navbar';
+import OldNavbar from '../layout/OldNavbar';
 import Footer from '../layout/Footer';
 
 const Login = () => (
   <div className="appLogin">
-    <Navbar />
+    <OldNavbar />
     <Row className="ant-row-center">
       <Col xs={24} sm={18} lg={10}>
         <div className="loginForm">
@@ -18,12 +18,26 @@ const Login = () => (
             <h2>Sign In</h2>
             <div>
               <label htmlFor="email">
-                <input type="email" className="styledInput" placeholder="Email" name="email" id="email" required />
+                <input
+                  type="email"
+                  className="styledInput"
+                  placeholder="Email"
+                  name="email"
+                  id="email"
+                  required
+                />
               </label>
             </div>
             <div className="mt-3">
               <label htmlFor="password">
-                <input type="password" className="styledInput" placeholder="Password" name="password" id="password" required />
+                <input
+                  type="password"
+                  className="styledInput"
+                  placeholder="Password"
+                  name="password"
+                  id="password"
+                  required
+                />
               </label>
             </div>
             <div className="rememberMeDiv mt-3">
@@ -31,12 +45,12 @@ const Login = () => (
                 <input type="checkbox" name="rememberMe" />
                 <span> Remember me</span>
               </div>
-              <div>
-                Forgot Password
-              </div>
+              <div>Forgot Password</div>
             </div>
             <div className="mt-3">
-              <Button type="primary" size="large" block>Login</Button>
+              <Button type="primary" size="large" block>
+                Login
+              </Button>
             </div>
             <Row className="mt-3 lineDiv">
               <Col span={8}>

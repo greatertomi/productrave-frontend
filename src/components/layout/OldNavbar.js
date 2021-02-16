@@ -1,25 +1,29 @@
 import React from 'react';
-import {
-  Menu, Layout, Input, Dropdown
-} from 'antd';
+import { Menu, Layout, Input, Dropdown } from 'antd';
 import { MdPersonOutline } from 'react-icons/md';
 import { BiMessageDetail } from 'react-icons/bi';
 import { IoBagAddOutline } from 'react-icons/io5';
-// Menu,
-// import { AppstoreOutlined, LoginOutlined, UserAddOutlined } from '@ant-design/icons';
-const { Search } = Input;
 
+const { Search } = Input;
 const { Header } = Layout;
 
 const menu = (
   <Menu>
     <Menu.Item className="menuItem">
-      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.alipay.com/"
+      >
         1st menu item
       </a>
     </Menu.Item>
     <Menu.Item className="menuItem">
-      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.taobao.com/"
+      >
         2nd menu item
       </a>
     </Menu.Item>
@@ -31,9 +35,8 @@ const menu = (
   </Menu>
 );
 
-const Navbar = () => {
-  const onSearch = () => {
-  };
+const OldNavbar = () => {
+  const onSearch = () => {};
 
   return (
     <div>
@@ -57,7 +60,11 @@ const Navbar = () => {
             <BiMessageDetail size={40} color="white" className="icon" />
           </div>
           <div>
-            <Dropdown overlay={menu} placement="bottomCenter" overlayClassName="dropdown">
+            <Dropdown
+              overlay={menu}
+              placement="bottomCenter"
+              overlayClassName="dropdown"
+            >
               <MdPersonOutline size={40} color="white" className="icon" />
             </Dropdown>
           </div>
@@ -67,4 +74,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default OldNavbar;
