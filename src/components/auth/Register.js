@@ -3,12 +3,12 @@ import { Button, Col, Row } from 'antd';
 import { ImFacebook2 } from 'react-icons/im';
 import { FaTwitterSquare } from 'react-icons/fa';
 import { AiFillGoogleSquare } from 'react-icons/ai';
-import Navbar from '../layout/Navbar';
+import OldNavbar from '../layout/OldNavbar';
 import Footer from '../layout/Footer';
 
 const Register = () => (
   <div className="appLogin">
-    <Navbar />
+    <OldNavbar />
     <Row className="ant-row-center">
       <Col xs={24} sm={18} lg={10}>
         <div className="loginForm">
@@ -63,7 +63,9 @@ const Register = () => (
               </label>
             </div>
             <div className="mt-3">
-              <Button type="primary" size="large" block>Register</Button>
+              <Button type="primary" size="large" block>
+                Register
+              </Button>
             </div>
             <Row className="mt-3 lineDiv">
               <Col span={8}>

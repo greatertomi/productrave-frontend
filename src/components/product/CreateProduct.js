@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Input, Select, Col, Rate, Row, Button } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
-import Navbar from '../layout/Navbar';
+import OldNavbar from '../layout/OldNavbar';
 import PicturesWall from './PicturesWall';
 
 const layout = {
@@ -24,7 +24,7 @@ const CreateProduct = () => {
 
   return (
     <div>
-      <Navbar />
+      <OldNavbar />
       <div className="mt-4">
         <h3 className="mb-3 text-center">Create Product</h3>
         <Form {...layout} className="createProductForm">
