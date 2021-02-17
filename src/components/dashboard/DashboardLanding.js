@@ -1,13 +1,11 @@
 import React from 'react';
 import { Carousel, Col, Row } from 'antd';
-import OldNavbar from '../layout/OldNavbar';
 import advert1 from '../../images/advert1.png';
 import advert2 from '../../images/advert2.png';
 import advert3 from '../../images/advert3.png';
 import advert4 from '../../images/advert4.png';
 import advert5 from '../../images/advert5.jpg';
 import CategoryBar from './CategoryBar';
-import Footer from '../layout/Footer';
 
 const layouts = [
   {
@@ -28,17 +26,16 @@ const layouts = [
   {
     id: 4,
     title: 'Suggestions',
-    itemNumber: 20,
+    itemNumber: 12,
   },
 ];
 
 const DashboardLanding = () => (
   <div>
-    <OldNavbar />
     <div className="mainPageDiv">
-      <div className="topBarCard">
+      <div className="topBarCard hideSm">
         <Row>
-          <Col span={7} className="hideSm">
+          <Col span={7}>
             <ul>
               <li>Health & Beauty</li>
               <li>Fashion</li>
@@ -80,7 +77,6 @@ const DashboardLanding = () => (
         />
       ))}
     </div>
-    <Footer />
   </div>
 );
 

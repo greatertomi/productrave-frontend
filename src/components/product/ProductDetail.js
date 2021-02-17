@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import { Row, Col, Rate, Button, Modal } from 'antd';
 
 import shoe from '../../images/shoe.jpg';
-import OldNavbar from '../layout/OldNavbar';
-import Footer from '../layout/Footer';
 import ProductComment from './ProductComment';
 import CreateComment from './CreateComment';
-// import Editor from './Editor';
 
 const ProductDetail = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -29,14 +26,13 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <OldNavbar />
-      <div className="mainPageDiv">
-        <div className="card py-2">
-          <Row gutter={14}>
-            <Col span={8}>
+      <div className="mainPageDiv py-2">
+        <div className="card">
+          <Row gutter={14} className="productMainDetail">
+            <Col lg={8} md={10} sm={24}>
               <img src={shoe} alt="product" height="300px" width="300px" />
             </Col>
-            <Col span={10}>
+            <Col lg={12} md={10} sm={24}>
               <h1>Premier Shoe Nike 450s</h1>
               <h3>Categories: Fashion, Sporting Wears</h3>
               <h2>$120</h2>
@@ -46,29 +42,31 @@ const ProductDetail = () => {
                 esse explicabo fugit iusto odio quaerat quas quia, quibusdam
                 reiciendis sapiente suscipit velit voluptas.
               </div>
-              <div className="mt-2">
+              <div className="mt-2 overallRating">
                 <div>Overall Rating</div>
                 <Rate onChange={handleChange} value={3.5} />
               </div>
             </Col>
-            <Col span={6}>
+            <Col lg={4} md={4} sm={24}>
               <h2 className="mb-2">Ratings</h2>
-              <div>
-                <div>Durability</div>
-                <Rate onChange={handleChange} allowHalf defaultValue={3.5} />
-              </div>
-              <div>
-                <div>Accessibility</div>
-                <Rate onChange={handleChange} allowHalf defaultValue={3} />
-              </div>
-              <div>
-                <div>Cost/Value</div>
-                <Rate onChange={handleChange} allowHalf defaultValue={2} />
-              </div>
-              <div>
-                <div>Usability</div>
-                <Rate onChange={handleChange} allowHalf defaultValue={5} />
-              </div>
+              <Row justify="space-between">
+                <Col lg={24} sm={12}>
+                  <div>Durability</div>
+                  <Rate onChange={handleChange} allowHalf defaultValue={3.5} />
+                </Col>
+                <Col lg={24} sm={12}>
+                  <div>Accessibility</div>
+                  <Rate onChange={handleChange} allowHalf defaultValue={3} />
+                </Col>
+                <Col lg={24} sm={12}>
+                  <div>Cost/Value</div>
+                  <Rate onChange={handleChange} allowHalf defaultValue={2} />
+                </Col>
+                <Col lg={24} sm={12}>
+                  <div>Usability</div>
+                  <Rate onChange={handleChange} allowHalf defaultValue={5} />
+                </Col>
+              </Row>
               <div className="mt-3 text-right">
                 <div className="ant-btn-link">Follow Category</div>
               </div>
@@ -77,10 +75,11 @@ const ProductDetail = () => {
         </div>
         <h2 className="mt-4">Comments</h2>
         <ProductComment />
+        <ProductComment />
 
         <div className="mt-4">
           <Button type="primary" onClick={handleShowModal}>
-            Show Modal
+            Make Comment
           </Button>
         </div>
       </div>
@@ -93,7 +92,6 @@ const ProductDetail = () => {
       >
         <CreateComment />
       </Modal>
-      <Footer />
     </div>
   );
 };

@@ -3,7 +3,12 @@ import { Dropdown, Menu, Rate } from 'antd';
 import { FaEllipsisH } from 'react-icons/fa';
 import { BiSmile } from 'react-icons/bi';
 import {
-  FcDislike, FcLike, FcIdea, FcLinux, FcNoIdea, FcSearch
+  FcDislike,
+  FcLike,
+  FcIdea,
+  FcLinux,
+  FcNoIdea,
+  FcSearch,
 } from 'react-icons/fc';
 
 import shoe from '../../images/shoe.jpg';
@@ -11,19 +16,13 @@ import shoe from '../../images/shoe.jpg';
 const menu = (
   <Menu>
     <Menu.Item>
-      <div>
-        Edit Comment
-      </div>
+      <div>Edit Comment</div>
     </Menu.Item>
     <Menu.Item>
-      <div className="deleteMenu">
-        Delete Comment
-      </div>
+      <div className="deleteMenu">Delete Comment</div>
     </Menu.Item>
     <Menu.Item>
-      <div>
-        Report Abuse
-      </div>
+      <div>Report Abuse</div>
     </Menu.Item>
   </Menu>
 );
@@ -58,30 +57,43 @@ const ProductComment = () => {
           </div>
           <div>
             <div className="font-weight-bold text-left">Kremlin Peters</div>
-            <div><Rate defaultValue={3} className="rate" /></div>
+            <div>
+              <Rate defaultValue={3} className="rate" />
+            </div>
             <div> Reviewed on december 20th, 2019</div>
           </div>
         </div>
-        <div>
-          <Dropdown overlay={reactions} placement="bottomRight" arrow trigger={['click']}>
+        <div className="actionIcons">
+          <Dropdown
+            overlay={reactions}
+            placement="bottomRight"
+            arrow
+            trigger={['click']}
+          >
             <BiSmile size={25} className="reaction" />
           </Dropdown>
-          <Dropdown overlay={menu} placement="bottomRight" arrow trigger={['click']}>
+          <Dropdown
+            overlay={menu}
+            placement="bottomRight"
+            arrow
+            trigger={['click']}
+          >
             <FaEllipsisH size={20} className="ellipses" />
           </Dropdown>
         </div>
       </div>
       <div className="mt-2">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Adipisci aspernatur, beatae cumque deserunt eveniet facilis
-          id iure laudantium nostrum odio optio qui soluta, ut veniam voluptate.
-          Doloribus facere magnam quam.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+          aspernatur, beatae cumque deserunt eveniet facilis id iure laudantium
+          nostrum odio optio qui soluta, ut veniam voluptate. Doloribus facere
+          magnam quam.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at dolorem
-          facere libero magnam nisi optio quasi recusandae tempora vel. Animi cupiditate
-          dolorem doloremque eaque eveniet, natus nisi officiis ratione.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
+          at dolorem facere libero magnam nisi optio quasi recusandae tempora
+          vel. Animi cupiditate dolorem doloremque eaque eveniet, natus nisi
+          officiis ratione.
         </p>
       </div>
       <div className="mt-3 reactionCount">

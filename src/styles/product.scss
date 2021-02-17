@@ -3,6 +3,9 @@
 .card {
   padding: 20px 30px;
   background: $card-color;
+  @media only screen and (max-width: 768px) {
+    padding: 20px 10px;
+  }
 }
 
 .ant-btn-link {
@@ -19,9 +22,11 @@
 }
 
 .commentDiv {
+  margin-top: 15px;
   .rate {
     font-size: 15px;
   }
+
   .heading {
     display: flex;
     justify-content: space-between;
@@ -35,7 +40,14 @@
         flex-direction: column;
       }
     }
+
+    @media only screen and (max-width: 768px) {
+      .actionIcons {
+        display: flex;
+      }
+    }
   }
+
   hr {
     background: $gray;
   }

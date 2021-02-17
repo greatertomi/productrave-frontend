@@ -51,6 +51,14 @@ h3 {
     margin: 40px 3% 20px;
   }
 
+  .mainPageDiv {
+    margin: 0 3% 20px !important;
+  }
+
+  .categoryCard {
+    margin-top: 20px !important;
+  }
+
   .landingImg {
     height: 250px !important;
     width: 100% !important;
@@ -251,7 +259,7 @@ h3 {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .hideSm {
     display: none;
   }
@@ -279,6 +287,14 @@ h3 {
   img {
     height: 200px;
     width: 180px;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 25px;
+    img {
+      height: 120px;
+      width: 120px;
+    }
   }
 }
 

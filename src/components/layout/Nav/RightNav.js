@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
-
 import { BiLogIn, BiDockTop } from 'react-icons/bi';
-
+import { AiOutlineAppstoreAdd, AiOutlineMessage } from 'react-icons/ai';
 import './nav.scss';
 
 const Ul = styled.ul`
@@ -22,22 +21,22 @@ const RightNav = ({ open }) => {
   return (
     <Ul open={open} className="ul">
       {loggedIn ? (
-        <div className="navItems">
+        <div className="navItems pt-2">
           <NavLink
             to="/create-item"
             className="li navLink"
             activeClassName="active"
           >
-            <BiLogIn size={30} />
+            <AiOutlineAppstoreAdd size={30} />
             <div>Create Item</div>
           </NavLink>
           <NavLink
-            to="/messages"
+            to="/dashboard"
             className="li navLink"
             activeClassName="active"
           >
-            <BiLogIn size={30} />
-            <div>Create Item</div>
+            <AiOutlineMessage size={30} />
+            <div>Messages</div>
           </NavLink>
         </div>
       ) : (
