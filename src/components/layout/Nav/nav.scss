@@ -1,3 +1,5 @@
+@import '../../../styles/variables';
+
 .navItems {
   list-style: none;
   display: flex;
@@ -10,12 +12,16 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    color: #fff;
     &:hover {
       color: #cbc9c9;
     }
     div {
       margin-left: 5px;
     }
+  }
+  .active {
+    color: $primary;
   }
 }
 
@@ -32,7 +38,7 @@
     transition: transform 0.3s ease-in-out;
 
     .li {
-      color: #fff;
+      color: #fff !important;
     }
   }
 }

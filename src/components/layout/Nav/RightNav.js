@@ -16,24 +16,38 @@ const Ul = styled.ul`
   }
 `;
 
-const loggedIn = false;
+const loggedIn = true;
 
 const RightNav = ({ open }) => {
   return (
     <Ul open={open} className="ul">
       {loggedIn ? (
         <div className="navItems">
-          <li>Create Item</li>
-          <li>Comment</li>
+          <NavLink
+            to="/create-item"
+            className="li navLink"
+            activeClassName="active"
+          >
+            <BiLogIn size={30} />
+            <div>Create Item</div>
+          </NavLink>
+          <NavLink
+            to="/messages"
+            className="li navLink"
+            activeClassName="active"
+          >
+            <BiLogIn size={30} />
+            <div>Create Item</div>
+          </NavLink>
         </div>
       ) : (
         <div className="navItems">
-          <NavLink to="/login" className="li navLink">
-            <BiLogIn size={30} color="#1169E5" />
+          <NavLink to="/login" className="li navLink" activeClassName="active">
+            <BiLogIn size={30} />
             <div>Login</div>
           </NavLink>
-          <NavLink to="/register" className="li">
-            <BiDockTop size={30} color="#1169E5" />
+          <NavLink to="/register" className="li" activeClassName="active">
+            <BiDockTop size={30} />
             <div>Register</div>
           </NavLink>
         </div>
