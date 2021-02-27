@@ -1,8 +1,7 @@
-import React from 'react';
-import { Form, Input, Select, Col, Rate, Row, Button } from 'antd';
+import React, { useEffect } from 'react';
+import { Form, Input, Col, Rate, Row, Button } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
-import OldNavbar from '../layout/OldNavbar';
 import PicturesWall from './PicturesWall';
 
 const layout = {
@@ -11,6 +10,10 @@ const layout = {
 };
 
 const CreateProduct = () => {
+  useEffect(() => {
+    document.title = 'ProductRave | Create Product';
+  }, []);
+
   const handleSubmitForm = () => {
     // handle
   };
@@ -23,11 +26,14 @@ const CreateProduct = () => {
   handleFailedSubmit();
 
   return (
-    <div>
-      <OldNavbar />
+    <div className="mainPageDiv">
       <div className="mt-4">
-        <h3 className="mb-3 text-center">Create Product</h3>
-        <Form {...layout} className="createProductForm">
+        <h1 className="mb-3 text-center">Create Product</h1>
+        <Form
+          {...layout}
+          className="createProductForm"
+          initialValues={{ rating: [''] }}
+        >
           <Form.Item
             label="Product Name"
             name="productName"
@@ -35,27 +41,31 @@ const CreateProduct = () => {
           >
             <Input />
           </Form.Item>
-          <Form.List name="categories">
+          <Form.Item label="Category" name="category">
+            <Input />
+          </Form.Item>
+          <Form.Item name="description" label="Product Description">
+            <Input.TextArea />
+          </Form.Item>
+          <Form.List name="rating">
             {(fields, { add, remove }) => (
               <>
                 {fields.map((field, index) => (
                   <Form.Item
-                    label={index <= 1 ? 'Category' : 'Categories'}
-                    required={false}
+                    name="description"
+                    label={`Rating Parameter ${index + 1}`}
                     key={field.key}
                   >
-                    <Row gutter={5}>
-                      <Col span={fields.length > 1 ? 20 : 24}>
-                        <Form.Item>
-                          <Select>
-                            <Select.Option value="cat1">
-                              Category 1
-                            </Select.Option>
-                            <Select.Option value="cat2">
-                              Category 2
-                            </Select.Option>
-                          </Select>
-                        </Form.Item>
+                    <Row gutter={10}>
+                      <Col span={20}>
+                        <Row gutter={10}>
+                          <Col lg={14} xs={24}>
+                            <Input />
+                          </Col>
+                          <Col lg={10} xs={16}>
+                            <Rate value="3" />
+                          </Col>
+                        </Row>
                       </Col>
                       <Col span={4}>
                         {fields.length > 1 ? (
@@ -68,33 +78,20 @@ const CreateProduct = () => {
                     </Row>
                   </Form.Item>
                 ))}
-                <Form.Item>
+                <Form.Item className="specialized">
                   <Button
                     type="dashed"
                     onClick={() => add()}
-                    style={{ width: '60%' }}
+                    style={{ width: '100%' }}
                     icon={<PlusOutlined />}
                   >
-                    Add Category
+                    Add Rating
                   </Button>
                 </Form.Item>
               </>
             )}
           </Form.List>
-          <Form.Item name="description" label="Product Description">
-            <Input.TextArea />
-          </Form.Item>
-          <Form.Item name="description" label="Rating Parameter">
-            <Row gutter={16}>
-              <Col span={16}>
-                <Input />
-              </Col>
-              <Col span={8}>
-                <Rate value="3" />
-              </Col>
-            </Row>
-          </Form.Item>
-          <div>
+          <div className="pictureWall">
             <PicturesWall />
           </div>
         </Form>

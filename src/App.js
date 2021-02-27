@@ -10,18 +10,22 @@ import Navbar from './components/layout/Nav/Navbar';
 import Footer from './components/layout/Footer';
 import DashboardLanding from './components/dashboard/DashboardLanding';
 import ProductDetail from './components/product/ProductDetail';
+import { AuthProvider } from './context/AuthContext';
+import CreateProduct from './components/product/CreateProduct';
+import PrivateRoute from './private-route';
 
 const App = () => (
   <BrowserRouter>
-    <div>
+    <AuthProvider>
       <Navbar />
       <Route path="/" exact component={Landing} />
       <Route path="/login" exact component={Login} />
       <Route path="/register" exact component={Register} />
-      <Route path="/dashboard" exact component={DashboardLanding} />
-      <Route path="/product-detail" exact component={ProductDetail} />
+      <PrivateRoute path="/dashboard" exact component={DashboardLanding} />
+      <PrivateRoute path="/product-detail" exact component={ProductDetail} />
+      <PrivateRoute path="/create-product" exact component={CreateProduct} />
       <Footer />
-    </div>
+    </AuthProvider>
   </BrowserRouter>
 );
 

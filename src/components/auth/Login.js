@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col, Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 
 import { ImFacebook2 } from 'react-icons/im';
 import { FaTwitterSquare } from 'react-icons/fa';
 import { AiFillGoogleSquare } from 'react-icons/ai';
+import { AuthContext } from '../../context/AuthContext';
 
 const Login = () => {
+  const [, setLoggedIn] = useContext(AuthContext);
   const history = useHistory();
 
   const loginUser = () => {
+    setLoggedIn(true);
     localStorage.setItem('loggedIn', 'true');
     history.push('/dashboard');
   };

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { NavLink } from 'react-router-dom';
-import { BiLogIn, BiDockTop } from 'react-icons/bi';
+import { NavLink, useHistory } from 'react-router-dom';
+import { BiLogIn, BiDockTop, BiLogOut } from 'react-icons/bi';
 import { AiOutlineAppstoreAdd, AiOutlineMessage } from 'react-icons/ai';
+import { AuthContext } from '../../../context/AuthContext';
 import './nav.scss';
 
 const Ul = styled.ul`
@@ -15,21 +16,27 @@ const Ul = styled.ul`
   }
 `;
 
-const loggedIn = localStorage.getItem('loggedIn') === 'true';
-console.log(loggedIn);
-
 const RightNav = ({ open }) => {
+  const [loggedIn, setLoggedIn] = useContext(AuthContext);
+  const history = useHistory();
+
+  const logOut = () => {
+    setLoggedIn(false);
+    localStorage.removeItem('loggedIn');
+    history.push('/');
+  };
+
   return (
     <Ul open={open} className="ul">
       {loggedIn ? (
         <div className="navItems pt-2">
           <NavLink
-            to="/create-item"
+            to="/create-product"
             className="li navLink"
             activeClassName="active"
           >
             <AiOutlineAppstoreAdd size={30} />
-            <div>Create Item</div>
+            <div>Create Product</div>
           </NavLink>
           <NavLink
             to="/dashboard"
@@ -39,6 +46,10 @@ const RightNav = ({ open }) => {
             <AiOutlineMessage size={30} />
             <div>Messages</div>
           </NavLink>
+          <div onClick={logOut} className="li navLink">
+            <BiLogOut size={30} />
+            <div className="hideLg">Logout</div>
+          </div>
         </div>
       ) : (
         <div className="navItems pt-2">

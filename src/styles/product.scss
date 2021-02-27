@@ -120,3 +120,16 @@
     opacity: 0.5;
   }
 }
+
+.createProductForm {
+  @media only screen and (min-width: 768px) {
+    .specialized {
+      margin-left: 33%;
+      width: 100%;
+    }
+  }
+
+  .pictureWall {
+    margin-left: 33%;
+  }
+}
