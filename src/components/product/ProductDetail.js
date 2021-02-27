@@ -76,7 +76,6 @@ const ProductDetail = () => {
         <h2 className="mt-4">Comments</h2>
         <ProductComment />
         <ProductComment />
-
         <div className="mt-4">
           <Button type="primary" onClick={handleShowModal}>
             Make Comment

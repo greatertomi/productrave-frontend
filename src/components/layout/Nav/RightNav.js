@@ -15,7 +15,8 @@ const Ul = styled.ul`
   }
 `;
 
-const loggedIn = true;
+const loggedIn = localStorage.getItem('loggedIn') === 'true';
+console.log(loggedIn);
 
 const RightNav = ({ open }) => {
   return (
@@ -40,7 +41,7 @@ const RightNav = ({ open }) => {
           </NavLink>
         </div>
       ) : (
-        <div className="navItems">
+        <div className="navItems pt-2">
           <NavLink to="/login" className="li navLink" activeClassName="active">
             <BiLogIn size={30} />
             <div>Login</div>
